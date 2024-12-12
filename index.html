@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assessment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container my-5">
+    <h1>Project Tracker</h1>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <button class="btn btn-primary" id="add-project-btn">Add Project</button>
+      <div id="project-status-filter" class="btn-group">
+        <button class="btn btn-secondary active" data-status="all">All</button>
+        <button class="btn btn-secondary" data-status="draft">Draft</button>
+        <button class="btn btn-secondary" data-status="in-progress">In Progress</button>
+        <button class="btn btn-secondary" data-status="done">Done</button>
+      </div>
+    </div>
+
+    <div id="project-list"></div>
+
+    <div class="modal fade" id="project-modal" tabindex="-1" aria-labelledby="project-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="project-modal-label">Add Project</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="project-form">
+              <div class="mb-3">
+                <label for="project-name" class="form-label">Project Name</label>
+                <input type="text" class="form-control" id="project-name" required>
+              </div>
+              <div class="mb-3">
+                <label for="project-status" class="form-label">Status</label>
+                <select class="form-select" id="project-status" required>
+                  <option value="draft">Draft</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="done">Done</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
